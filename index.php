@@ -13,20 +13,15 @@ $twig = new Twig_Environment($loader, array(
 
 
 class MainHandler extends ToroHandler {
-    public function get() { 
-        echo 'Hello, world';
-    }
-}
-
-class MainHandler2 extends ToroHandler {
-    public function get() { 
-        echo 'Hello, world too !';
+    public function get() {
+        global $twig;
+        $template = $twig->loadTemplate('index.html');
+        $template->display(array());
     }
 }
 
 $site = new ToroApplication(array(
     array('/', 'MainHandler'),
-    array('/too', 'MainHandler2')
 ));
 
 $site->serve();

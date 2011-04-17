@@ -1,0 +1,15 @@
+{% import "forms.html" as forms %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>{{ site_title|default('Picnic Manager') }} - {{ title|default('Accueil') }}</title>
+        <meta charset='utf-8' />
+
+    </head>
+    <body>
+        <h1>{{ title|default('Accueil') }}</h1>
+
+        <p>Créer un nouveau pique-nique {{ forms.input('name') }} pour {{ forms.input('nb', none, none, 4) }} personnes</p>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<?php
+
+define('TEMPLATES_PATH', '/PATH/TO/picnic/templates');
+define('TEMPLATES_CACHE', '/PATH/TO/picnic/cache');
+
+
