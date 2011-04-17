@@ -1,3 +1,9 @@
+
 RewriteEngine on
+
+RewriteBase /~julien/picnic
+
 RewriteCond $1 !^(index\.php)
 RewriteRule ^(.*)$ index.php/$1 [L]
+
+
