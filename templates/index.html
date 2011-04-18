@@ -10,6 +10,8 @@
     <body>
         <h1>{{ title|default('Accueil') }}</h1>
 
-        <p>Créer un nouveau pique-nique {{ forms.input('name') }} pour au moins {{ forms.input('nb', none, none, 4) }} personnes</p>
+        <form action='create' method='post'>
+            <p>Créer un nouveau pique-nique {{ forms.input('name') }} pour au moins {{ forms.input('expected', none, none, 4) }} personnes le {{ forms.input('when', none, none, 8) }}</p>
+        </form>
     </body>
 </html>
