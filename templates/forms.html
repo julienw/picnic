@@ -1,3 +1,10 @@
 {% macro input(name, value, type, size) %}
     <input id="{{ name }}" type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(20) }}" />
 {% endmacro %}
+{% macro select(name, options, size) %}
+<select id="{{ name }}" name="{{ name }}" size="{{ size|default(20) }}">
+    {% for option in options %}
+        <option value='{{ option.value }}'>{{ option.title }}</option>
+    {% endfor %}
+</select>
+{% endmacro %}

@@ -1,0 +1,35 @@
+{% import "forms.html" as forms %}
+
+<!doctype html>
+
+<html>
+    <head>
+        <title>{{ site_title|default('Picnic Manager') }} - {{ title|default('Accueil') }}</title>
+        <meta charset='utf-8' />
+    </head>
+
+    <body>
+        <h1>{{ title|default('Accueil') }}</h1>
+
+        <form action='participants' method='post'>
+            <h2>{{ forms.input('coming', 'checkbox') }} Je participe au pique-nique <em>{{ picnic_name }}</em>...</h2>
+            <h2>{{ forms.input('bringing', 'checkbox') }} et j'amènerai&nbs;:</h2>
+            <ul>
+                <li>{{ forms.input('starters', 'checkbox') }} une entrée
+                    <ul>
+                        <li>
+                        {{ forms.input('starter-1', 'checkbox') }} une salade
+                        {{ forms.select('starter-1-types'}, [{ value: 1, title: 'de riz' }, { value: 2, title: 'niçoise' }]) }}
+                        </li>
+                    </ul>
+                </li>
+                <li>{{ forms.input('main', 'checkbox') }} un plat</li>
+                <li>{{ forms.input('cheese', 'checkbox') }} du fromage</li>
+                <li>{{ forms.input('dessert', 'checkbox') }} un dessert</li>
+                <li>{{ forms.input('drinks', 'checkbox') }} des boissons</li>
+                <li>{{ forms.input('alcohol', 'checkbox') }} des boissons alcoolisées</li>
+            </ul>
+        </form>
+    </body>
+</html>
+
